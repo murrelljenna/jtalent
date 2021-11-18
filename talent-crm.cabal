@@ -78,7 +78,7 @@ executable talent-crm
 
   -- Other library packages from which modules are imported.
   build-depends:       base >=4.12 && <4.13
-                       , scotty
+                       , scotty, aeson
 
   -- Directories containing source files.
   hs-source-dirs:      src, src/api, src/domain
