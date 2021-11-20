@@ -8,4 +8,4 @@ import Data.Aeson hiding (json)
 
 main = scotty 3000 $
     get "/registrants" $ do
-        json $ fetch "hey"
+        json $ list
