@@ -9,12 +9,12 @@ import Data.Aeson hiding (json)
 main = scotty 3000 $ do
     get "/registrants" $ do
         result <- liftIO list
-        json $ result
+        json result
 
     get "/registrants/:id" $ do
         id <- param "id"
         result <- liftIO $ fetch id
-        json $ result
+        json result
 
 
 
