@@ -1,0 +1,20 @@
+cradle:
+  multi:
+    - path: "./"
+      config:
+        cradle:
+          stack:
+            - path: "./src/Main.hs"
+              component: "haskell-language-server:exe:haskell-language-server"
+
+            - path: "./src"
+              component: "haskell-language-server:lib"
+
+            - path: "./src/api"
+              component: "haskell-language-server:lib"
+
+            - path: "./src/domain"
+              component: "haskell-language-server:lib"
+
+            - path: "./src/persistence"
+              component: "haskell-language-server:lib"
