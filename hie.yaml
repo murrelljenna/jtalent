@@ -1,20 +1,31 @@
 cradle:
-  multi:
-    - path: "./"
-      config:
-        cradle:
-          stack:
-            - path: "./src/Main.hs"
-              component: "haskell-language-server:exe:haskell-language-server"
+  cabal:
+    - path: "src"
+      component: "lib:talent-crm"
 
-            - path: "./src"
-              component: "haskell-language-server:lib"
+    - path: "src/Main.hs"
+      component: "talent-crm:exe:talent-crm"
 
-            - path: "./src/api"
-              component: "haskell-language-server:lib"
+    - path: "src/api/Main.hs"
+      component: "talent-crm:exe:talent-crm"
 
-            - path: "./src/domain"
-              component: "haskell-language-server:lib"
+    - path: "src/domain/Main.hs"
+      component: "talent-crm:exe:talent-crm"
 
-            - path: "./src/persistence"
-              component: "haskell-language-server:lib"
+    - path: "src/persistence/Main.hs"
+      component: "talent-crm:exe:talent-crm"
+
+    - path: "src/persistence/db/Main.hs"
+      component: "talent-crm:exe:talent-crm"
+
+    - path: "src/persistence/schemas/Main.hs"
+      component: "talent-crm:exe:talent-crm"
+
+    - path: "src/persistence/columns/Main.hs"
+      component: "talent-crm:exe:talent-crm"
+
+    - path: "src/persistence/adapters/Main.hs"
+      component: "talent-crm:exe:talent-crm"
+
+    - path: "src/http/Main.hs"
+      component: "talent-crm:exe:talent-crm"
