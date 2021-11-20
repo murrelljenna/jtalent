@@ -4,7 +4,9 @@ import Data.Maybe
 import Registrant
 --import RegistrantDB
 
-fetch :: Integer -> IO (Maybe Registrant)
+type Id = Integer
+
+fetch :: Id -> IO (Maybe Registrant)
 fetch 1 = return $ Just $ Registrant 1 "Peter" "???"
 fetch x = return Nothing
 
