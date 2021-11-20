@@ -4,7 +4,7 @@ import Registrant
 --import RegistrantDB
 
 fetch :: String -> IO Registrant
-fetch id = liftIO Registrant "WHATS UP" "hey"
+fetch id = return $ Registrant 1 "WHATS UP" "hey"
 
 list :: IO [Registrant]
-list = liftIO [Registrant "Jenna" "Murrell", Registrant "Laura" "Murrell"]
+list = return [Registrant 2 "Jenna" "Murrell", Registrant 3 "Laura" "Murrell", Registrant 4 "Joanna" "Murrell"]

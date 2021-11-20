@@ -6,7 +6,8 @@ module Registrant where
 import GHC.Generics
 import Data.Aeson
 
-data Registrant = Registrant { firstName :: String
+data Registrant = Registrant {id :: Int 
+                           , firstName :: String
                            , lastName :: String
                            } deriving (Generic, Show)
 
