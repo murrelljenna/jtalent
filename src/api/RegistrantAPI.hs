@@ -1,8 +1,8 @@
 module RegistrantAPI where
 
-import Data.Maybe
 import Registrant
 import Tag
+import UpdateRegistrantInput
 --import RegistrantDB
 
 type Id = Integer
@@ -14,6 +14,10 @@ fetch x = return Nothing
 
 list :: IO [Registrant]
 list = return [Registrant 2 "Jenna" "Murrell" [Short], Registrant 3 "Laura" "Murrell" [Tall], Registrant 4 "Joanna" "Murrell" [Tall]]
+
+
+update :: Registrant -> IO Registrant
+update r = return
 
 tag :: Id -> Tag -> IO (Maybe Registrant)
 tag id t = do
