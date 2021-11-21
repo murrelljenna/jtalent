@@ -9,6 +9,7 @@ import Registrant
 import Control.Monad.IO.Class
 import Data.Aeson hiding (json)
 import Tag
+import CreateRegistrantInput
 import UpdateRegistrantInput
 import Data.Maybe
 
@@ -28,4 +29,10 @@ registrantHttp = do
         ri <- jsonData
         let r' = merge (fromJust r) ri
         result <- liftIO $ update r'
+        json result
+
+    post "/registrants" $ do
+        ri <- jsonData
+        let r' = convert ri
+        result <- liftIO $ create r'
         json result

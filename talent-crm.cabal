@@ -81,7 +81,7 @@ executable talent-crm
                        , scotty, aeson, hasql, rel8
 
   -- Directories containing source files.
-  hs-source-dirs:      src, src/api, src/domain, src/persistence, src/persistence/db/, src/persistence/schemas, src/persistence/columns, src/persistence/adapters, src/http/
+  hs-source-dirs:      src, src/api, src/domain, src/persistence, src/persistence/db/, src/persistence/schemas, src/persistence/columns, src/persistence/adapters, src/http/, src/http/inputs
 
   -- Base language which the package is written in.
   default-language:    Haskell2010

@@ -17,7 +17,11 @@ list = return [Registrant 2 "Jenna" "Murrell" [Short], Registrant 3 "Laura" "Mur
 
 
 update :: Registrant -> IO Registrant
-update r = return
+update r = return r
+
+
+create :: Registrant -> IO Registrant
+create r = return r
 
 tag :: Id -> Tag -> IO (Maybe Registrant)
 tag id t = do
