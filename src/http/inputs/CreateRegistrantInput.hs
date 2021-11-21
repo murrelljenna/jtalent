@@ -8,6 +8,7 @@ import Data.Aeson
 import Data.Maybe
 import qualified Registrant as R
 import Prelude hiding (id)
+import Data.UUID
 
 data CreateRegistrantInput = CreateRegistrantInput 
     { firstName :: String
@@ -15,9 +16,9 @@ data CreateRegistrantInput = CreateRegistrantInput
     , tags :: [Tag]
     } deriving (Generic)
 
-convert :: CreateRegistrantInput -> R.Registrant
-convert (CreateRegistrantInput {..}) = R.Registrant 
-    0
+convert :: UUID -> CreateRegistrantInput -> R.Registrant
+convert id (CreateRegistrantInput {..}) = R.Registrant 
+    id
     firstName
     lastName
     tags
