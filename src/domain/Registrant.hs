@@ -13,7 +13,6 @@ data Registrant = Registrant {id :: UUID
                              , tags :: [Tag]
                              } deriving (Generic, Show)
 
-addTag :: Tag -> Registrant -> Registrant
-addTag t (Registrant{..}) = Registrant id firstName lastName (tags ++ [t])
+
 
 instance ToJSON Registrant where

@@ -37,8 +37,4 @@ create ri = do
     let r = convert id ri
     return r
 
-tag :: Id -> Tag -> IO (Maybe Registrant)
-tag id t = do
-    r <- fetch id
-    let tf = addTag t
-    return $ fmap tf r
+
