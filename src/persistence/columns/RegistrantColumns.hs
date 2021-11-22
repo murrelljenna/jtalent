@@ -10,9 +10,12 @@ module RegistrantColumns where
 import Prelude
 import Rel8
 import GHC.Generics
+import Data.UUID
+import Tag
 
 data RegistrantColumns f = RegistrantColumns 
-  { firstNameColumn :: Column f String
+  { idColumn :: Column f UUID
+  , firstNameColumn :: Column f String
   , lastNameColumn :: Column f String 
   } 
   deriving stock (Generic)

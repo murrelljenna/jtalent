@@ -11,4 +11,4 @@ import RegistrantAdapter
 list :: IO [Registrant]
 list = do 
   Right conn <- Connection.acquire connectionSettings
-  select conn (each registrantSchema) >>= mapM_ print
+  return $ select (each registrantSchema) >>= mapM registrantOutput
