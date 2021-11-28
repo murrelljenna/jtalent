@@ -4,7 +4,7 @@ import Registrant
 import Tag
 import UpdateRegistrantInput
 import CreateRegistrantInput
---import RegistrantDB
+import RegistrantDB
 
 import Data.UUID
 import System.Random

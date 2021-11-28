@@ -5,10 +5,13 @@ import Data.List
 import qualified Hasql.Connection as Connection
 import Registrant
 import Connection
-import RegistrantSchema
+import Database.Persist
+import Database.Persist.TH
 import RegistrantAdapter
+import Control.Monad.IO.Class
 
 list :: IO [Registrant]
-list = do 
-  Right conn <- Connection.acquire connectionSettings
-  return $ select (each registrantSchema) >>= mapM registrantOutput
+list = do
+  rs <- selectList [] []
+  let rs' = map registrantOutput $ entityVal rs
+  return rs

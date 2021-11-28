@@ -1,11 +1,13 @@
-{-# LANGUAGE DeriveGeneric #-}
+{-# LANGUAGE DeriveGeneric, TemplateHaskell #-}
 
 module Tag where
 
 import GHC.Generics
 import Data.Aeson
+import Database.Persist.TH
 
-data Tag = Tall | Short deriving (Generic, Show)
+data Tag = Tall | Short deriving (Generic, Show, Read)
+derivePersistField "Tag"
 
 instance ToJSON Tag where
 
