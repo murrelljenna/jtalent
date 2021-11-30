@@ -4,9 +4,10 @@ import Prelude hiding (id)
 
 import RegistrantModel
 import Registrant
-import Rel8
 import Tag
 import Control.Monad.IO.Class
+import Data.UUID
+import Data.Maybe
 
 import Database.Persist
 import Database.Persist.TH
@@ -15,11 +16,12 @@ import Database.Persist.TH
 
 
 registrantOutput :: RegistrantModel -> Registrant
-registrantOutput registrantModel = do
-    r <- registrantModel
-    Registrant $
-        (registrantModelId registrantModel) 
-        (registrantModelFirstName registrantModel) 
-        (registrantModelLastName registrantModel) 
-        (registrantModelTags registrantModel) 
-    
+registrantOutput registrantModel = 
+  Registrant 
+   (fuckYou registrantModel)
+   (registrantModelFirstName registrantModel)
+   (registrantModelLastName registrantModel)
+   (registrantModelTags registrantModel)
+
+fuckYou :: RegistrantModel -> UUID
+fuckYou rm = fromJust (fromString (registrantModelIdCode rm))

@@ -17,7 +17,6 @@
 module RegistrantModel where
 
 import Prelude
-import Rel8
 import GHC.Generics
 import Data.UUID
 import Tag
@@ -27,9 +26,9 @@ import Database.Persist
 import Database.Persist.TH
 import Database.Persist.Postgresql
 
-share [mkPersist sql Settings, mkMigrate "migrateAll"] [persistLowerCase|
+share [mkPersist sqlSettings, mkMigrate "migrateAll"] [persistLowerCase|
 RegistrantModel sql=Registrants
-    id String
+    idCode String
     firstName String
     lastName String
     tags [Tag]
