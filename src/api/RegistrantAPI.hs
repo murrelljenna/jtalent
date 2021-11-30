@@ -4,7 +4,7 @@ import Registrant
 import Tag
 import UpdateRegistrantInput
 import CreateRegistrantInput
-import RegistrantDB
+import qualified RegistrantDB as DB
 
 import Data.UUID
 import System.Random
@@ -22,10 +22,7 @@ fetch x = return Nothing
 
 
 list :: IO [Registrant]
-list = do
-    id <- newUUID
-    return [Registrant id "Jenna" "Murrell" [Short], Registrant id "Laura" "Murrell" [Tall], Registrant id "Joanna" "Murrell" [Tall]]
-
+list = DB.list
 
 update :: Registrant -> IO Registrant
 update r = return r
