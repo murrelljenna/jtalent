@@ -33,5 +33,6 @@ RegistrantModel sql=Registrants
     lastName String
     tags [Tag]
     deriving Show
-|]
+SomeShit sql=Hey
+    idhaha String|]
 
