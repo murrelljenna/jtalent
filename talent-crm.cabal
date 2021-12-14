@@ -79,7 +79,7 @@ executable talent-crm
 
   -- Other library packages from which modules are imported.
   build-depends:       base >=4.12
-                       , scotty, aeson, hasql, uuid, random, persistent, persistent-postgresql, monad-logger, transformers
+                       , scotty, aeson, hasql, uuid, random, persistent, persistent-postgresql, monad-logger, transformers, wai-cors
 
   -- Directories containing source files.
   hs-source-dirs:      src, src/api, src/domain, src/persistence, src/persistence/db/, src/persistence/schemas, src/persistence/columns, src/persistence/adapters, src/http/, src/http/inputs
